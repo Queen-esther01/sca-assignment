@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- Material Design Bootstrap -->
+  <!-- <link href="css/mdb.min.css" rel="stylesheet"> -->
+</head>
+<body>
+   <div>
+       <h1>Simple to-do</h1>
+       <form action="">
+           <input type="text" class="list_text form-control">
+
+           <div class="card">
+               <ul class="list_wrapper list-group list-group-flush">
+               </ul>
+           </div>
+
+           <button class="add_button btn btn-primary">add to-do</button>
+           <button class="delete_button btn btn-secondary">delete to-do</button>
+           <!-- <button class="btn btn-light">Search</button> -->
+           
+       </form>
+   </div> 
+
+   <script>
+       let addButton = document.querySelector('.add_button');
+       let deleteButton = document.querySelector('.delete_button');
+       let listWrapper = document.querySelector('.list_wrapper');
+       let inputText = document.querySelector('.list_text');
+    //    let searchButton = document.querySelector('.btn-light');
+       
+
+       addButton.addEventListener('click', (event)=> {
+           event.preventDefault();
+           listElement = document.createElement('li');
+           listElement.classList.add("list-group-item");
+           listElement.textContent = inputText.value;
+           listWrapper.appendChild(listElement);
+           inputText.value = '';
+           sessionStorage.setItem('listItem', listElement.textContent);
+        //    console.log(listWrapper.children.textContent);
+        //    for(index in listWrapper.children){
+        //         console.log(listWrapper.children[index].textContent);
+        //     }
+        });
+
+       
+
+       deleteButton.addEventListener('click', (event) =>{
+           event.preventDefault();
+           listWrapper.removeChild(listWrapper.lastElementChild)
+       })
+
+    //    searchButton.addEventListener('click', (event)=>{
+    //        event.preventDefault();
+           
+    //    })
+       
+       
+   </script>
+</body>
+</html>

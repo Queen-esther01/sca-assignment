@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+}
+form{
+    margin-top: 50px;
+}
+input[type=text]{
+    width: 50%;
+    margin: auto;
+}
+button{
+    margin-top: 50px;
+}
+.card{
+    width: 18rem;
+    margin: 30px auto;
+}
